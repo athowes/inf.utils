@@ -6,7 +6,7 @@ Authors@R:
            family = "Howes",
            role = c("aut", "cre"),
            email = "ath19@ic.ac.uk")
-Description: Utilities functions for TMB, R-INLA, tmbstan, Stan model comparison.
+Description: Utility functions for TMB, R-INLA, tmbstan, Stan model comparison.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
