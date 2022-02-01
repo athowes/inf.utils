@@ -13,10 +13,10 @@ tmb_summary <- function(sd_out) {
 
   sd_summary %>%
     as.data.frame() %>%
-    mutate(parameter = parameter_names) %>%
-    rename(
+    dplyr::mutate(parameter = parameter_names) %>%
+    dplyr::rename(
       "mean" = "Estimate",
       "sd" = "Std. Error"
     ) %>%
-    mutate(method = "TMB")
+    dplyr::mutate(method = "TMB")
 }
