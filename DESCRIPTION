@@ -1,0 +1,13 @@
+Package: inf.utils
+Title: Inference Utilities
+Version: 0.1.0
+Authors@R: 
+    person(given = "Adam",
+           family = "Howes",
+           role = c("aut", "cre"),
+           email = "ath19@ic.ac.uk")
+Description: Utilities functions for TMB, R-INLA, tmbstan, Stan model comparison.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
