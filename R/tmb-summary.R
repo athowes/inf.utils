@@ -20,3 +20,10 @@ tmb_summary <- function(sd_out) {
     ) %>%
     dplyr::mutate(method = "TMB")
 }
+
+sample_tmb <- function(sd_out, obj, M) {
+  prec <- sd_out$jointPrecision
+  cov <- solve(prec)
+  samples <- mvtnorm::rmvnorm(n = M, obj$env$last.par, as.matrix(cov))
+  as.data.frame(samples)
+}
