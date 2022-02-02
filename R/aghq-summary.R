@@ -1,11 +1,11 @@
 aghq_summary <- function(quad) {
-  aghq_hyper <- summary(quad)$aghqsummary$summarytable %>%
+  aghq_hyper <- summary(quad, max_print = 10^3)$aghqsummary$summarytable %>%
     as.data.frame() %>%
     tibble::rownames_to_column() %>%
     dplyr::rename(parameter = rowname) %>%
     dplyr::select(parameter, mean, sd)
 
-  aghq_random <- summary(quad)$randomeffectsummary %>%
+  aghq_random <- summary(quad, max_print = 10^3)$randomeffectsummary %>%
     as.data.frame() %>%
     tibble::rownames_to_column() %>%
     # Warning: this rownumber as index only works when you have one random effect!
