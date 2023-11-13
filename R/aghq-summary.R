@@ -5,7 +5,10 @@ aghq_summary <- function(quad) {
     dplyr::rename(parameter = rowname) %>%
     dplyr::select(parameter, mean, sd)
 
-  aghq_random <- summary(quad, max_print = 10^3)$randomeffectsummary %>%
+  aghq_random <- summary(quad, max_print = 10^3)$randomeffectsummary
+  names(aghq_random) <- c("mean", "median", "mode", "sd", "2.5%", "97.5%", "variable")
+
+  aghq_random %>%
     as.data.frame() %>%
     tibble::rownames_to_column() %>%
     # Warning: this rownumber as index only works when you have one random effect!
